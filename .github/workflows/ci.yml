@@ -40,8 +40,10 @@ jobs:
         include:
           - frappe-version: version-15
             python-version: "3.10"
+            node-version: 18
           - frappe-version: version-16
-            python-version: "3.12"
+            python-version: "3.14"  # Required for Frappe v16
+            node-version: 24        # Required for Frappe v16
 
     steps:
       - name: Clone
@@ -60,7 +62,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
           check-latest: true
 
       - name: Cache pip
