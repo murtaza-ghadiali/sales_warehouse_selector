@@ -66,12 +66,12 @@ This app was originally built for **Frappe v15**, and it also works on **Frappe 
 
 ## Supported Versions
 
-| Component | Version |
-|---------|--------|
-| Frappe | v15, v16 |
-| ERPNext | v15, v16 |
-| Node.js | **24.x (mandatory for v16)** |
-| Python | ≥ 3.10 |
+| Component | Version                      |
+| --------- | ---------------------------- |
+| Frappe    | v15, v16                     |
+| ERPNext   | v15, v16                     |
+| Node.js   | **24.x (mandatory for v16)** |
+| Python    | ≥ 3.10                       |
 
 ---
 
@@ -79,20 +79,19 @@ This app was originally built for **Frappe v15**, and it also works on **Frappe 
 
 1.  Download the app using the Bench CLI.
 
-    ```bash
-    bench get-app --branch [branch name] https://github.com/murtaza-ghadiali/sales_warehouse_selector.git
-    ```
+```bash
+bench get-app --branch [branch name] https://github.com/murtaza-ghadiali/sales_warehouse_selector.git
+```
 
 Replace `[branch name]` with the branch that you're using for Frappe Framework, ERPNext.
 If it isn't specified, the `--branch` option will default to **develop**.
 
 2.  Install the app on your site.
 
-    ```bash
-    bench --site [site name] install-app sales_warehouse_selector
-    bench build --app sales_warehouse_selector
-    ```
-
+```bash
+bench --site [site name] install-app sales_warehouse_selector
+bench build --app sales_warehouse_selector
+```
 
 ## Installation (For Frappe v16)
 
