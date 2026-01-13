@@ -38,6 +38,11 @@ jobs:
       fail-fast: false
       matrix:
         frappe-version: [version-15, develop]
+        include:
+          - frappe-version: version-15
+            python-version: "3.10"
+          - frappe-version: develop
+            python-version: "3.12"
 
     steps:
       - name: Clone
@@ -51,7 +56,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: ${{ matrix.python-version }}
 
       - name: Setup Node
         uses: actions/setup-node@v3
