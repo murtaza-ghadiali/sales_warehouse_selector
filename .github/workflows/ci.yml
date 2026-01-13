@@ -4,11 +4,11 @@ name: CI
 on:
   push:
     branches:
-      - develop
+      - main
   pull_request:
 
 concurrency:
-  group: develop-sales_warehouse_selector-${{ github.event.number }}
+  group: main-sales_warehouse_selector-${{ github.event.number }}
   cancel-in-progress: true
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        frappe-version: [version-15, develop]
+        frappe-version: [version-15, version-16]
 
     steps:
       - name: Clone
