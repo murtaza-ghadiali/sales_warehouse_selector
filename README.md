@@ -10,10 +10,7 @@ Quickly select the best warehouse while creating Sales Invoices and Sales Orders
 
 ![Quick Preview](https://github.com/murtaza-ghadiali/sales_warehouse_selector/blob/main/Readme%20images/warehouse_popup.gif)
 
-
-
 <!-- ![image](https://github.com/murtaza-ghadiali/sales_warehouse_selector/blob/main/Readme%20images/image.png) -->
-
 
 </div>
 
@@ -35,15 +32,16 @@ The result is a faster, cleaner, and more reliable workflow.
 
 ## Features
 
--   Automatically opens a **warehouse selection popup** when an item is selected.
--   Lists **all warehouses** where the item is available.
--   Shows **available quantity** for each warehouse.
--   Highlights the **recommended warehouse** (highest stock).
--   One-click **Use** button for each warehouse.
--   Popup appears neatly at the **bottom-right** corner.
--   Modern, clean UI that matches ERPNext design.
--   No ERPNext core changes.
--   Upgrade-safe and production-ready.
+- Compatible with Frappe **v15 and v16**
+- Automatically opens a **warehouse selection popup** when an item is selected.
+- Lists **all warehouses** where the item is available.
+- Shows **available quantity** for each warehouse.
+- Highlights the **recommended warehouse** (highest stock).
+- One-click **Use** button for each warehouse.
+- Popup appears neatly at the **bottom-right** corner.
+- Modern, clean UI that matches ERPNext design.
+- No ERPNext core changes.
+- Upgrade-safe and production-ready.
 
 ---
 
@@ -62,8 +60,22 @@ The result is a faster, cleaner, and more reliable workflow.
 ## Installation
 
 Make sure you already have a working Frappe site with ERPNext installed.
+This app was originally built for **Frappe v15**, and it also works on **Frappe v16** with a small setup adjustment.
 
-### Step 1. Download the app
+---
+
+## Supported Versions
+
+| Component | Version |
+|---------|--------|
+| Frappe | v15, v16 |
+| ERPNext | v15, v16 |
+| Node.js | **24.x (mandatory for v16)** |
+| Python | ≥ 3.10 |
+
+---
+
+### Step 1. Download the app(For Frappe v15)
 
 1.  Download the app using the Bench CLI.
 
@@ -78,15 +90,41 @@ If it isn't specified, the `--branch` option will default to **develop**.
 
     ```bash
     bench --site [site name] install-app sales_warehouse_selector
+    bench build --app sales_warehouse_selector
     ```
+
+
+## Installation (For Frappe v16)
+
+### Step 1. Use Node.js 24 (Mandatory)
+
+```bash
+nvm use 24
+```
+
+Run this before any bench command.
+
+### Step 2. Download the app
+
+```bash
+bench get-app https://github.com/murtaza-ghadiali/sales_warehouse_selector.git
+bench --site yoursite.local install-app sales_warehouse_selector
+bench build --app sales_warehouse_selector
+bench restart
+```
+
+---
+
+### Configuration
+
+No special configuration is needed. The app works out-of-the-box for all Sales Invoices and Sales Orders.
 
 ## Contributions and Community
 
 There are many ways you can contribute even if you don't code:
 
 1. You can start by giving a star to this repository!
-1. If you find any issues, even if it is a typo, you can [raise an issue](https://github.com/murtaza-ghadiali/sales_warehouse_selector/issues/new) to inform us.
-
+2. If you find any issues, even if it is a typo, you can [raise an issue](https://github.com/murtaza-ghadiali/sales_warehouse_selector/issues/new) to inform us.
 
 ## License
 
