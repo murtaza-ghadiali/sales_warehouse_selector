@@ -37,11 +37,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        frappe-version: [version-15, develop]
+        frappe-version: [version-15, version-16]
         include:
           - frappe-version: version-15
             python-version: "3.10"
-          - frappe-version: develop
+          - frappe-version: version-16
             python-version: "3.12"
 
     steps:
