@@ -57,66 +57,16 @@ The result is a faster, cleaner, and more reliable workflow.
 
 ---
 
-## Installation
+## Usage
 
-Make sure you already have a working Frappe site with ERPNext installed.
-This app was originally built for **Frappe v15**, and it also works on **Frappe v16** with a small setup adjustment.
+1. Open a **Sales Invoice** or **Sales Order** and add a new item row.
+2. Select an item in the **Item Code** field.
+3. A popup appears in the bottom-right corner listing all warehouses that have stock for the selected item.
+4. Each row shows the **warehouse name** and its **available quantity**. The warehouse with the highest stock is highlighted and marked as **Recommended**.
+5. Click **Use** on any warehouse row to apply it to the item line.
+6. The popup closes automatically and the warehouse field is updated instantly.
 
----
-
-## Supported Versions
-
-| Component | Version                      |
-| --------- | ---------------------------- |
-| Frappe    | v15, v16                     |
-| ERPNext   | v15, v16                     |
-| Node.js   | **24.x (mandatory for v16)** |
-| Python    | ≥ 3.10                       |
-
----
-
-### Step 1. Download the app(For Frappe v15)
-
-1.  Download the app using the Bench CLI.
-
-```bash
-bench get-app --branch [branch name] https://github.com/murtaza-ghadiali/sales_warehouse_selector.git
-```
-
-Replace `[branch name]` with the branch that you're using for Frappe Framework, ERPNext.
-If it isn't specified, the `--branch` option will default to **develop**.
-
-2.  Install the app on your site.
-
-```bash
-bench --site [site name] install-app sales_warehouse_selector
-bench build --app sales_warehouse_selector
-```
-
-## Installation (For Frappe v16)
-
-### Step 1. Use Node.js 24 (Mandatory)
-
-```bash
-nvm use 24
-```
-
-Run this before any bench command.
-
-### Step 2. Download the app
-
-```bash
-bench get-app https://github.com/murtaza-ghadiali/sales_warehouse_selector.git
-bench --site yoursite.local install-app sales_warehouse_selector
-bench build --app sales_warehouse_selector
-bench restart
-```
-
----
-
-### Configuration
-
-No special configuration is needed. The app works out-of-the-box for all Sales Invoices and Sales Orders.
+If the item has no stock in any warehouse, a message is shown and no popup appears.
 
 ## Contributions and Community
 

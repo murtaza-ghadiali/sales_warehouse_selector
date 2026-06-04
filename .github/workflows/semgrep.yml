@@ -1,0 +1,24 @@
+name: Semgrep
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    name: Semgrep Rules
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        run: |
+          pip install semgrep
+          semgrep --config https://raw.githubusercontent.com/frappe/semgrep-rules/develop/rules/frappe_correctness.yml \
+                  --config https://raw.githubusercontent.com/frappe/semgrep-rules/develop/rules/ux.yml \
+                  --error \
+                  .

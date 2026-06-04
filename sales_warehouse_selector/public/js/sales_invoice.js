@@ -15,7 +15,7 @@ frappe.ui.form.on("Sales Invoice Item", {
                 },
                 callback(r) {
                     if (!r.message || r.message.length === 0) {
-                        frappe.msgprint("Item not available in any warehouse");
+                        frappe.msgprint(__("Item not available in any warehouse"));
                         return;
                     }
                     show_warehouse_dialog(row, r.message);
